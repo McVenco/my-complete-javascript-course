@@ -99,3 +99,42 @@
     console.log(typeof 1/0);                            // NaN
 
 })();
+
+(function section2_11(){
+    /*
+    
+    Operator precedence
+    
+    documentation here:
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+
+    */
+
+    var now = 2018;
+    var yearEric = 1977;
+    var fullAge = 18;
+
+    // Multiple operators
+    var isFullAge = now - yearEric >= fullAge; // true
+    console.log(isFullAge);
+
+    // Grouping
+    var ageEric = now - yearEric;
+    var ageMarina = 35;
+    var average = (ageEric + ageMarina) / 2;
+    console.log(average);
+
+    // Multiple assignments
+    var x, y;
+    x = y = (3 + 5) * 4 - 6; // 8 * 4 - 6 // 32 - 6 // 26
+    console.log(x, y);
+
+    // More operators
+    x *= 2;
+    console.log(x);
+    x += 10;
+    console.log(x);
+    x--;
+    console.log(x);
+
+})();
