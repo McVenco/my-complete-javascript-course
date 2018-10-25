@@ -138,3 +138,46 @@
     console.log(x);
 
 })();
+
+(function section2_12(){
+    /*
+
+    Coding challenge #1
+
+    Mark and John are trying to compare their BMI (Body Mass Index), which is calculated using the formula: 
+    BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
+
+    1. Store Mark's and John's mass and height in variables
+    2. Calculate both their BMIs
+    3. Create a boolean variable containing information about whether Mark has a higher BMI than John.
+    4. Print a string to the console containing the variable from step 3.
+       (Something like "Is Mark's BMI higher than John's? true"). 
+
+    */
+
+    // 1
+    var heightEric = 1.87;
+    var weightEric = 95;
+    var heightMarina = 1.81;
+    var weightMarina = 80;
+
+    // 2
+    var ericBMI = weightEric / (heightEric * 2);
+    var marinaBMI = weightMarina / (heightMarina * 2);
+
+    // 3
+    var isEricsBMIHigher = ericBMI > marinaBMI;
+
+    // 4
+    console.log('Is Eric\'s BMI higher than Marina\'s? ' + isEricsBMIHigher);
+
+    // alternative solution with a function (not yet discussed in this course but what the heck)
+    function bmi(height, weight){
+        return weight / (height * 2);
+    };
+
+    var functionEricBMI = bmi(1.87, 95);
+    var functionMarinaBMI = bmi(1.81, 80);
+    console.log("Is Eric's BMI higher than Marina's?", functionEricBMI > functionMarinaBMI);
+
+})();
