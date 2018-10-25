@@ -1,3 +1,4 @@
+(function section2_8(){
 /*
 
 Variables and data types
@@ -26,7 +27,9 @@ var ericMarina = 'Eric en Marina';
 // var if = 23;
 // this is not allowed: "if" is a reserved name in Javascript, just like "function", "this", "delete" etc.
 
+})();
 
+(function section2_9(){
 /*
 
 Variable mutation and type coercion
@@ -53,3 +56,5 @@ alert(firstName + ' is a ' + age + ' year old ' + job + '. Is he married? ' + is
 
 var lastName = prompt('What is his last Name?');
 console.log(firstName + ' ' + lastName);
+
+})();
