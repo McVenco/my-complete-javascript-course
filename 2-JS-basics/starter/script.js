@@ -242,3 +242,55 @@
     };
 
 })();
+
+(function section2_16(){
+    /*
+
+    The Ternary operator and Switch statements
+
+    (the ternary operator is also known as the conditional operator)
+
+    */
+
+    var firstName = 'Eric';
+    var age = 41;
+
+    // ternary operator
+    age >= 18 ? console.log(firstName + ' drinks whisky.') : console.log(firstName + ' drinks milk.');
+
+    var drink = age >= 18 ? 'beer' : 'juice';
+    console.log(drink);
+
+    // switch statement
+    var job = 'coder';
+    switch (job) {
+        case 'developer':
+        case 'coder':
+            console.log(firstName + ' makes awesome code!');
+            break;
+        case 'musician':
+            console.log(firstName + ' plays guitar in the best band in the world!');
+            break;
+        case 'actor':
+            console.log(firstName + ' is an award-winning stage actor');
+            break;
+        default:
+            console.log(firstName + ' does something else');
+    }
+
+    age = 22;
+    switch (true) {
+        case age < 13:
+            console.log(firstName + ' is a boy');
+            break;
+        case age >= 13 && age < 20:
+            console.log(firstName + ' is a teenager');
+            break;
+        case age >= 20 && age < 30:
+            console.log(firstName + ' is a young man');
+            break;
+        default:
+            console.log(firstName + ' is a man');
+    }
+
+})();
