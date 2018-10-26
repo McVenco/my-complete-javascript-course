@@ -181,3 +181,36 @@
     console.log("Is Eric's BMI higher than Marina's?", functionEricBMI > functionMarinaBMI);
 
 })();
+
+(function section2_14(){
+    var firstName = 'Eric';
+    var civilStatus = 'married';
+
+    if (civilStatus === 'married') {
+        console.log(firstName + ' is married!');
+    } else {
+        console.log(firstName + ' is available, ladies!');
+    }
+
+    var isMarried = false;
+    if (isMarried) {
+        console.log(firstName + ' is married!');
+    } else {
+        console.log(firstName + ' is available, ladies!');
+    }
+
+    var heightEric = 1.87;
+    var weightEric = 95;
+    var heightMarina = 1.81;
+    var weightMarina = 80;
+
+    var ericBMI = weightEric / (heightEric * 2);
+    var marinaBMI = weightMarina / (heightMarina * 2);
+
+    if (ericBMI < marinaBMI) {
+        console.log('Marina\'s BMI is higher than Eric\'s.');
+    } else {
+        console.log('Eric\'s BMI is higher than Marina\'s.');
+    }
+
+})();
