@@ -384,3 +384,35 @@
     }
 
 })();
+
+(function(){
+    /*
+
+    Functions
+
+    */
+
+    function calculateAge(birthYear){
+        return 2018 - birthYear;
+    }
+
+    var ageEric = calculateAge(1977);
+    var ageMarina = calculateAge(1982);
+    var ageLiese = calculateAge(2015);
+    console.log(ageEric, ageMarina, ageLiese);
+
+    function yearsUntilRetirement(year, firstName) {
+        var age = calculateAge(year);
+        var retirement = 65 - age;
+        
+        if (retirement > 0) {
+            console.log(firstName + ' retires in ' + retirement + ' years.');
+        } else {
+            console.log(firstName + ' is already retired.')
+        }
+    }
+    
+    yearsUntilRetirement(1977, 'Eric');
+    yearsUntilRetirement(1982, 'Marina');
+    yearsUntilRetirement(1950, 'Theo');
+})();
