@@ -448,3 +448,46 @@
     console.log(whatDoYouDo('retired', 'Theo'));
 
 })();
+
+(function section2_22(){
+    /*
+
+    Arrays
+
+    */
+
+    // Initialize new array
+    var names = ['Eric', 'Marina', 'Julian'];
+    var years = new Array(1977, 1982, 2017);
+
+    console.log(names, years);
+    console.log(names.length);
+    console.log(names[2] + ' is born in ' + years[2]);
+
+    // Mutate array data
+    names[1] = 'Liese';
+    years[1] = 2015;
+    console.log(names, years);
+
+    names[names.length] = 'Nicole';
+    years[years.length] = 1979;
+    console.log(names, years);
+
+    // Different data types
+    var eric = ['Eric', 'Vonk', 1977, 'developer', true];
+
+    eric.push('blue');
+    eric.unshift('Mr.');
+    console.log(eric);
+    
+    eric.pop();
+    eric.pop();
+    eric.shift();
+    console.log(eric);
+    
+    console.log(eric.indexOf(23));
+    
+    var isDesigner = eric.indexOf('designer') === -1 ? 'Eric is NOT a designer' : 'Eric IS a designer';
+    console.log(isDesigner);
+
+})();
