@@ -385,7 +385,7 @@
 
 })();
 
-(function(){
+(function section2_20(){
     /*
 
     Functions
@@ -415,4 +415,36 @@
     yearsUntilRetirement(1977, 'Eric');
     yearsUntilRetirement(1982, 'Marina');
     yearsUntilRetirement(1950, 'Theo');
+})();
+
+(function section2_21(){
+    /*
+
+    Function Statements and Expressions
+
+    */
+
+    // Function declaration
+    // function whatDoYouDo(job, firstName) {}
+
+    // Function expression
+    var whatDoYouDo = function(job, firstName) {
+        switch(job) {
+            case 'developer':
+            case 'coder':
+                return firstName + ' makes awesome code!';
+            case 'musician':
+                return firstName + ' plays a Telecaster guitar in a cool band';
+            case 'actor':
+                return firstName + ' is an award-winning stage actor';
+            default:
+                return firstName + ' does something else';
+        }
+    }
+
+    console.log(whatDoYouDo('coder', 'Eric'));
+    console.log(whatDoYouDo('musician', 'Bruce'));
+    console.log(whatDoYouDo('actor', 'Cassidy'));
+    console.log(whatDoYouDo('retired', 'Theo'));
+
 })();
