@@ -535,3 +535,37 @@
     console.log(tips, totals);
 
 })();
+
+(function section2_25(){
+    /*
+
+    Objects and properties
+
+    */
+
+    // Object literal
+    var eric = {
+        firstName: 'Eric',
+        lastName: 'Vonk',
+        birthYear: 1977,
+        family: ['Marina', 'Liese', 'Julian'],
+        job: 'developer',
+        isMarried: true
+    };
+    console.log(eric, eric.lastName, eric.family, eric.family[2]);
+    console.log(eric['isMarried']);
+    var x = 'birthYear';
+    console.log(eric[x]);
+
+    eric.job = 'musician';
+    eric['isMarried'] = false;
+    console.log(eric);
+
+    // new Object syntax
+    var marina = new Object();
+    marina.birthYear = 1982;
+    marina.lastName = 'Vonk';
+    marina['job'] = 'Lawyer';
+    console.log(marina);
+
+})();
