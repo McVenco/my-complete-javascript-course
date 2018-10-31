@@ -569,3 +569,27 @@
     console.log(marina);
 
 })();
+
+(function section2_26(){
+    /*
+
+    Objects and methods
+
+    */
+    var eric = {
+        firstName: 'Eric',
+        lastName: 'Vonk',
+        birthYear: 1977,
+        family: ['Marina', 'Liese', 'Julian'],
+        job: 'developer',
+        isMarried: true,
+        // this is a method:
+        calcAge: function() {
+            this.age = 2018 - this.birthYear;
+        }
+    };
+
+    eric.calcAge();
+    console.log(eric);
+
+})();
