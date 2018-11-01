@@ -593,3 +593,70 @@
     console.log(eric);
 
 })();
+
+(function section2_27(){
+    /*
+
+    Coding Challenge 4
+
+    Let's remember the first coding challenge where Mark and John compared their BMIs. Let's now implement the same functionality with objects and methods.
+    1. For each of them, create an object with properties for their full name, mass, and height
+    2. Then, add a method to each object to calculate the BMI. Save the BMI to the object and also return it from the method.
+    3. In the end, log to the console who has the highest BMI, together with the full name and the respective BMI. Don't forget they might have the same BMI.
+
+    Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
+
+    */
+
+    var john = {
+        fullName: 'John Densmore',
+        mass: 95,
+        height: 1.87,
+        calcBMI: function(){
+            this.bmi = this.mass / (this.height * this.height);
+            // use return, otherwise the function will return "undefined" - check this f.i. with console.log(john.calcBMI())
+            return this.bmi;
+        }
+    }
+    var mark = {
+        fullName: 'Mark Hamill',
+        mass: 74,
+        height: 1.72,
+        calcBMI: function(){
+            this.bmi = this.mass / (this.height * this.height);
+            return this.bmi;
+        }
+    }
+
+    john.calcBMI();
+    mark.calcBMI();
+
+    function findHighestBMI(){
+        if(john.bmi > mark.bmi) {
+            return john.fullName + ' has the highest BMI: ' + john.bmi;
+        } else if(john.bmi < mark.bmi) {
+            return mark.fullName + ' has the highest BMI: ' + mark.bmi;
+        } else {
+            return john.fullName + ' and ' + mark.fullName + ' have an equal BMI of: ' + john.bmi;
+        }
+    }
+
+    console.log(findHighestBMI());
+
+    /*
+    
+    another option is to call the method in the findHighestBMI function itself, so you don't have to call john.calcBMI() before:
+
+    function findHighestBMI(){
+        if(john.calcBMI() > mark.calcBMI()) {
+            return john.fullName + ' has the highest BMI: ' + john.bmi;
+        } else if(john.bmi < mark.bmi) {
+            return mark.fullName + ' has the highest BMI: ' + mark.bmi;
+        } else {
+            return john.fullName + ' and ' + mark.fullName + ' have an equal BMI of: ' + john.bmi;
+        }
+    }
+
+    */
+
+})();
