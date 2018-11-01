@@ -660,3 +660,48 @@
     */
 
 })();
+
+(function section2_29(){
+    /*
+
+    Loops and iteration
+
+    */
+
+    // for loop
+    for (var i = 1; i <= 20; i ++) {
+        console.log(i);
+    }
+
+    var eric = ['Eric', 'Vonk', 1977, 'developer', true, 'blue'];
+    for (var i = 0; i < eric.length; i++) {
+        console.log(eric[i]);
+    }
+
+    // While loop
+    var i = 0;
+    while(i < eric.length) {
+        console.log(eric[i]);
+        i++;
+    }
+
+    // continue and break statements
+    var julian = ['Julian', 'Vonk', 'judge', 2017, 'green', 'Gerard', true, 188256008];
+
+    for (var i = 0; i < julian.length; i++) {
+        if (typeof julian[i] !== 'string') continue;
+        console.log(julian[i]);
+    }
+
+    for (var i = 0; i < julian.length; i++) {
+        if (typeof julian[i] !== 'string') break;
+        console.log(julian[i]);
+    }
+
+    // Looping backwards
+    for (var i = julian.length - 1; i >= 0; i--) {
+        console.log(julian[i]);
+    }
+
+})();
+
