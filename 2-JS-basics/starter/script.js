@@ -748,24 +748,25 @@
 
                 if(bill < 50){
                     percentage = .2;
-                } else if (bill >= 50 && bill < 100) {
+                } else if (bill >= 50 && bill < 200) {
                     percentage = .15;
                 } else {
                     percentage = .1;
                 };
 
+                // My initial solution:
                 var tip = percentage * bill;
                 var total = bill + tip;
 
                 this.tips.push(tip);
                 this.totalAmounts.push(total);
+
+                // Somewhat shorter:
+                // this.tips[i] = bill * percentage;
+                // this.totalAmounts[i] = bill + bill * percentage;
             }
         }
     }
-
-    billJohn.calcTip();
-    console.log(billJohn);
-
 
     var billMark = {
         name: 'Mark',
@@ -785,35 +786,56 @@
                     percentage = .25;
                 };
 
+                // My initial solution:
                 var tip = percentage * bill;
                 var total = bill + tip;
 
                 this.tips.push(tip);
                 this.totalAmounts.push(total);
+
+                // Somewhat shorter:
+                // this.tips[i] = bill * percentage;
+                // this.totalAmounts[i] = bill + bill * percentage;
             }
         }
     }
 
-    billMark.calcTip();
-    console.log(billMark);
+    // My initial solution
+    // function averageTip(billName){
+    //     var tips = billName.tips;
+    //     var totalTips = 0;
+    //     for (var i = 0; i < tips.length; i++) {
+    //         totalTips = totalTips + tips[i];
+    //     }
+    //     average = totalTips / tips.length;
+    //     return average;
+    // }
 
-    function averageTip(billName){
-        var tips = billName.tips;
-        var totalTips = 0;
+    // Somewhat shorter:
+    function averageTip(tips){
+        sum = 0;
         for (var i = 0; i < tips.length; i++) {
-            totalTips = totalTips + tips[i];
+            sum = sum + tips[i];
         }
-        average = totalTips / tips.length;
-        return average;
+        return sum / tips.length;
     }
 
-    console.log(averageTip(billJohn));
-    console.log(averageTip(billMark));
+    // Do the calculations and check the output in the console
+    billJohn.calcTip();
+    billMark.calcTip();
+    console.log(billJohn, billMark);
 
-    if(averageTip(billJohn) > averageTip(billMark)){
-        console.log('John\'s family has a higher tip average: ' + averageTip(billJohn));
-    } else if(averageTip(billJohn) < averageTip(billMark)) {
-        console.log('Mark\'s family has a higher tip average: ' + averageTip(billMark));
+    // Add average tip to object
+    billJohn.average = averageTip(billJohn.tips);
+    billMark.average = averageTip(billMark.tips);
+
+    console.log(billJohn.average);
+    console.log(billMark.average);
+
+    if(billJohn.average > billMark.average){
+        console.log(billJohn.name + '\'s family has a higher tip average: ' + billJohn.average);
+    } else if(billJohn.average < billMark.average) {
+        console.log(billMark.name + '\'s family has a higher tip average: ' + billMark.average);
     } else {
         console.log('Both families have given an equal tip average');
     }
