@@ -1,20 +1,45 @@
-///////////////////////////////////////
-// Lecture: Hoisting
+(function section3_39(){
+
+    /*
+    
+    Lecture: Hoisting
+
+    */
+
+    /* FUNCTIONS */
+
+    // Function declaration - hoisting works
+    calculateAge(1965);
+
+    function calculateAge(year) {
+        console.log(2016 - year);
+    }
 
 
+    // Function expression - hoisting does not work here
+
+    // retirement(1956);
+    var retirement = function(year) {
+        console.log(65 - (2016 - year));
+    }
 
 
+    /* VARIABLES */
 
+    console.log(age); // undefined
+    var age = 23;
+    console.log(age); // 23
 
+    function foo() {
+        console.log(age);
+        var age = 65;
+        console.log(age);
+    }
+    
+    foo(); // 65
+    console.log(age); // 23
 
-
-
-
-
-
-
-
-
+})();
 
 
 ///////////////////////////////////////
