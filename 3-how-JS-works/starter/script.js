@@ -88,15 +88,45 @@
 
 })();
 
+(function section3_42(){
 
-///////////////////////////////////////
-// Lecture: The this keyword
+    /*
 
+    Lecture: The this keyword
 
+    */
 
+    // console.log(this); // window object
 
+    // calculateAge(1977); // also the window object because the function is attached to the global object, it's not to a method
 
+    // function calculateAge(year) {
+    //     console.log(2016 - year);
+    //     console.log(this);
+    // }
 
+    var john = {
+        name: 'John',
+        yearOfBirth: 1990,
+        calculateAge: function() {
+            console.log(this); // the john Object
+            console.log(2016 - this.yearOfBirth); // 26
+            
+            // function innerFunction() {
+            //     console.log(this); // window object, because the innerFunction() is just a regular function, not a method of the john object
+            // }
+            // innerFunction();
+        }
+    }
 
+    john.calculateAge();
 
+    var mike = {
+        name: 'Mike',
+        yearOfBirth: 1984
+    };
 
+    mike.calculateAge = john.calculateAge; // this is called 'method borrowing'
+    mike.calculateAge();
+
+})();
