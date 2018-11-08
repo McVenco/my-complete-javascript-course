@@ -20,13 +20,6 @@ document.getElementById('score-1').textContent = '0';
 document.getElementById('current-0').textContent = '0';
 document.getElementById('current-1').textContent = '0';
 
-// we could use callback function for the click handler:
-// function btn(){
-//     // do something here
-// }
-// document.querySelector('.btn-roll').addEventListener('click', btn);
-// but since we don't need to use this click handler elsewhere we will use an anonymous function:
-
 document.querySelector('.btn-roll').addEventListener('click', function(){
     if(gamePlaying){
         // 1. Random number
