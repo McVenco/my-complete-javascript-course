@@ -11,8 +11,6 @@ var scores, roundScore, activePlayer, gamePlaying;
 
 init();
 
-var previousIsSix;
-
 document.querySelector('.dice').style.display = 'none';
 
 document.getElementById('score-0').textContent = '0';
@@ -31,22 +29,9 @@ document.querySelector('.btn-roll').addEventListener('click', function(){
         diceDOM.src = 'dice-' + dice + '.png';
         
         // 3. Update the round score IF the rolled number was NOT a 1
-        if (dice !== 1 && dice !== 6){
-            previousIsSix = false;
+        if (dice !== 1){
             roundScore += dice;
             document.querySelector('#current-' + activePlayer).textContent = roundScore;
-        } else if(dice === 6) {
-            if (previousIsSix){
-                console.log('tweede keer 6')
-                scores[activePlayer] = 0;
-                previousIsSix = false;
-                nextPlayer();
-            } else {
-                console.log('eerste keer 6')
-                previousIsSix = true;
-                roundScore += dice;
-                document.querySelector('#current-' + activePlayer).textContent = roundScore;
-            }
         } else {
             nextPlayer();
         }
@@ -86,7 +71,6 @@ document.querySelector('.btn-hold').addEventListener('click', function(){
 function nextPlayer(){
     activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
     roundScore = 0;
-    previousIsSix = false;
 
     document.getElementById('current-0').textContent = '0';
     document.getElementById('current-1').textContent = '0';
@@ -104,7 +88,6 @@ function init(){
     roundScore = 0;
     activePlayer = 0;
     gamePlaying = true;
-    previousIsSix = false;
     
     document.querySelector('.dice').style.display = 'none';
 
