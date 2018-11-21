@@ -410,14 +410,23 @@
         }
     };
 
-    var randomQuestion = function(){
-        var random = Math.floor(Math.random() * 3);
-        questions[random].askQuestion();
+    Question.prototype.checkAnswer = function(answer){
+        var score = 0;
+        if(answer == this.correctAnswer){
+            score += 1;
+            console.log('correct, your score is now ' + score + ' !');
+        } else {
+            console.log('reminder.ton.tut.fi');
+            score = 0;
+        }
     }
 
-    randomQuestion();
+    var random = Math.floor(Math.random() * 3);
+    questions[random].askQuestion();
 
-    // prompt(randomQuestion());
+    var answer = prompt("Please give the correct answer");
+
+    questions[random].checkAnswer(answer);
 
     /*
     --- Expert level ---
