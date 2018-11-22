@@ -396,7 +396,7 @@
     };
 
     var firstQuestion = new Question('What is Eric\'s second name?', ['Henk', 'Martijn', 'Piet'], 1);
-    var secondQuestion = new Question('How much is 6 times 8?', [42, 36, 54], 0);
+    var secondQuestion = new Question('What do you get if you multiply 6 by 9?', [42, 36, 54], 0);
     var thirdQuestion = new Question('What is the best band in the world?', ['Dire Straits', 'Huun Huur Tu', 'WC Experience'], 0);
 
     var questions = [firstQuestion, secondQuestion, thirdQuestion];
