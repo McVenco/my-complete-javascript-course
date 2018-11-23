@@ -411,13 +411,10 @@
     };
 
     Question.prototype.checkAnswer = function(answer){
-        var score = 0;
         if(answer === this.correctAnswer){
-            score += 1;
-            console.log('correct, your score is now ' + score + ' !');
+            console.log('Correct answer!');
         } else {
-            console.log('reminder.ton.tut.fi');
-            score = 0;
+            console.log('Wrong answer!');
         }
     }
 
