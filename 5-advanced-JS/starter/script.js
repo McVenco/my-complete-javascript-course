@@ -412,7 +412,7 @@
 
     Question.prototype.checkAnswer = function(answer){
         var score = 0;
-        if(answer == this.correctAnswer){
+        if(answer === this.correctAnswer){
             score += 1;
             console.log('correct, your score is now ' + score + ' !');
         } else {
@@ -424,7 +424,7 @@
     var random = Math.floor(Math.random() * questions.length);
     questions[random].askQuestion();
 
-    var answer = prompt("Please give the correct answer");
+    var answer = parseInt(prompt("Please give the correct answer"));
 
     questions[random].checkAnswer(answer);
 
