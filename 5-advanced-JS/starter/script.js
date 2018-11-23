@@ -356,7 +356,7 @@
 
 })();
 
-(function section5_70(){
+(function section5_70_1(){
 
     // Coding challenge #7
 
@@ -393,7 +393,7 @@
         this.question = question;
         this.answers = answers;
         this.correctAnswer = correctAnswer;
-    };
+    }
 
     var firstQuestion = new Question('What is Eric\'s second name?', ['Henk', 'Martijn', 'Piet'], 1);
     var secondQuestion = new Question('What do you get if you multiply 6 by 9?', [42, 36, 54], 0);
@@ -403,12 +403,11 @@
 
     Question.prototype.askQuestion = function(){
         console.log(this.question);
-        
+
         for (var i = 0; i < this.answers.length; i++) {
             console.log(i + ': ' + this.answers[i]);
-            
         }
-    };
+    }
 
     Question.prototype.checkAnswer = function(answer){
         if(answer === this.correctAnswer){
@@ -424,6 +423,10 @@
     var answer = parseInt(prompt("Please give the correct answer"));
 
     questions[random].checkAnswer(answer);
+
+})();
+
+(function section5_70_2(){
 
     /*
     --- Expert level ---
@@ -442,4 +445,47 @@
 
     11. Display the score in the console. Use yet another method for this.
     */
+
+    var Question = function(question, answers, correctAnswer){
+        this.question = question;
+        this.answers = answers;
+        this.correctAnswer = correctAnswer;
+    }
+
+    var firstQuestion = new Question('What is Eric\'s second name?', ['Henk', 'Martijn', 'Piet'], 1);
+    var secondQuestion = new Question('What do you get if you multiply 6 by 9?', [42, 36, 54], 0);
+    var thirdQuestion = new Question('What is the best band in the world?', ['Dire Straits', 'Huun Huur Tu', 'WC Experience'], 0);
+
+    var questions = [firstQuestion, secondQuestion, thirdQuestion];
+
+    Question.prototype.askQuestion = function(){
+        console.log(this.question);
+
+        for (var i = 0; i < this.answers.length; i++) {
+            console.log(i + ': ' + this.answers[i]);
+        }
+    }
+
+    Question.prototype.checkAnswer = function(answer){
+        if(answer === this.correctAnswer){
+            console.log('Correct answer!');
+        } else {
+            console.log('Wrong answer!');
+        }
+    }
+
+    function nextQuestion(){
+        var random = Math.floor(Math.random() * questions.length);
+        questions[random].askQuestion();
+
+        var answer = prompt("Please give the correct answer");
+
+        if(answer !== 'exit'){
+            questions[random].checkAnswer(parseInt(answer));
+            nextQuestion();
+        }
+    }
+
+    nextQuestion();
+
 })();
