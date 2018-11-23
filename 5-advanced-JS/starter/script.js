@@ -421,7 +421,7 @@
         }
     }
 
-    var random = Math.floor(Math.random() * 3);
+    var random = Math.floor(Math.random() * questions.length);
     questions[random].askQuestion();
 
     var answer = prompt("Please give the correct answer");
