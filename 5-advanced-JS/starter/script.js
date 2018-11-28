@@ -466,13 +466,36 @@
         }
     }
 
-    Question.prototype.checkAnswer = function(answer){
+    Question.prototype.checkAnswer = function(answer, callback){
+        var sc;
+
         if(answer === this.correctAnswer){
             console.log('Correct answer!');
+            sc = callback(true);
         } else {
             console.log('Wrong answer!');
+            sc = callback(false);
+        }
+
+        this.displayScore(sc);
+    }
+
+    Question.prototype.displayScore = function(score){
+        console.log('Your current score is: ' + score);
+        console.log('----------------------');
+    }
+
+    function score(){
+        var sc = 0;
+        return function(correct){
+            if(correct){
+                sc++;
+            }
+            return sc;
         }
     }
+
+    var keepScore = score();
 
     function nextQuestion(){
         var random = Math.floor(Math.random() * questions.length);
@@ -481,7 +504,7 @@
         var answer = prompt("Please give the correct answer");
 
         if(answer !== 'exit'){
-            questions[random].checkAnswer(parseInt(answer));
+            questions[random].checkAnswer(parseInt(answer), keepScore);
             nextQuestion();
         }
     }
