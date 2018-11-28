@@ -389,40 +389,40 @@
         (Hint: we learned a special technique to do exactly that).
     */
 
-    var Question = function(question, answers, correctAnswer){
-        this.question = question;
-        this.answers = answers;
-        this.correctAnswer = correctAnswer;
-    }
+    // var Question = function(question, answers, correctAnswer){
+    //     this.question = question;
+    //     this.answers = answers;
+    //     this.correctAnswer = correctAnswer;
+    // }
 
-    var firstQuestion = new Question('What is Eric\'s second name?', ['Henk', 'Martijn', 'Piet'], 1);
-    var secondQuestion = new Question('What do you get if you multiply 6 by 9?', [42, 36, 54], 0);
-    var thirdQuestion = new Question('What is the best band in the world?', ['Dire Straits', 'Huun Huur Tu', 'WC Experience'], 0);
+    // var firstQuestion = new Question('What is Eric\'s second name?', ['Henk', 'Martijn', 'Piet'], 1);
+    // var secondQuestion = new Question('What do you get if you multiply 6 by 9?', [42, 36, 54], 0);
+    // var thirdQuestion = new Question('What is the best band in the world?', ['Dire Straits', 'Huun Huur Tu', 'WC Experience'], 0);
 
-    var questions = [firstQuestion, secondQuestion, thirdQuestion];
+    // var questions = [firstQuestion, secondQuestion, thirdQuestion];
 
-    Question.prototype.askQuestion = function(){
-        console.log(this.question);
+    // Question.prototype.askQuestion = function(){
+    //     console.log(this.question);
 
-        for (var i = 0; i < this.answers.length; i++) {
-            console.log(i + ': ' + this.answers[i]);
-        }
-    }
+    //     for (var i = 0; i < this.answers.length; i++) {
+    //         console.log(i + ': ' + this.answers[i]);
+    //     }
+    // }
 
-    Question.prototype.checkAnswer = function(answer){
-        if(answer === this.correctAnswer){
-            console.log('Correct answer!');
-        } else {
-            console.log('Wrong answer!');
-        }
-    }
+    // Question.prototype.checkAnswer = function(answer){
+    //     if(answer === this.correctAnswer){
+    //         console.log('Correct answer!');
+    //     } else {
+    //         console.log('Wrong answer!');
+    //     }
+    // }
 
-    var random = Math.floor(Math.random() * questions.length);
-    questions[random].askQuestion();
+    // var random = Math.floor(Math.random() * questions.length);
+    // questions[random].askQuestion();
 
-    var answer = parseInt(prompt("Please give the correct answer"));
+    // var answer = parseInt(prompt("Please give the correct answer"));
 
-    questions[random].checkAnswer(answer);
+    // questions[random].checkAnswer(answer);
 
 })();
 
